@@ -1,0 +1,54 @@
+cluster_details:
+  # Choose standard or dense node type. Default = dense.
+  node_type: standard
+
+  # Indicate whether to enable deletion protection (yes)
+  # or to disable deletion protection (no). Default = yes.
+  deletion_protection: yes
+
+  # Enter the number of disks per node.
+  # Choose a number from 3 to 6. Default = 3.
+  disks_per_node: 3
+
+  # Enter disk size in GB. 1 TB = 1000 GB. Default = 2000
+  # Minimum disk size for standard nodes: 500 GB.
+  # Minimum disk size for dense nodes: 2000 GB.
+  # Total size for standard nodes: 1500 GB to 6000 GB.
+  # Total size for dense nodes: 6000 GB to 24000 GB.
+  # All disks will be the same size.
+  disk_size_gb: 500
+
+  # Assign instance VM names. Follow GCP naming guidelines.
+  node_names:
+  - rb-p-bendeck-cc-cdm5-vm01
+  - rb-p-bendeck-cc-cdm5-vm02
+  - rb-p-bendeck-cc-cdm5-vm03
+  - rb-p-bendeck-cc-cdm5-vm04
+
+platform_details:
+  platform: gcp
+  base_node_image: rubrik-5-3-3-p6-19540
+
+  # Enter the name of the credentials file for
+  # the service account.
+  credentials_file: rubrikpso-c386df3bf241.json
+
+  # Enter the GCP project ID associated with
+  # the project that will be used for the cloud cluster.
+  project: rubrikpso
+
+  # Enter the name of the GCP zone that will be used
+  # for the cloud cluster.
+  zone: us-east1-c
+
+  # Enter the bucket name for where the Rubrik base node
+  # image will be copied.
+  bucket: rubrik-pb-bucket
+
+  # Enter the name of the vpc network that will be used
+  # with the cloud cluster.
+  vpc: p-bendeck-vpc
+
+  # Enter the name of the subnet that will be used
+  # with the cloud cluster.
+  subnet: p-bendeck-subnet
